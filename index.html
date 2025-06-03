@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ece ve Halil
+    </title>
+    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Petemoss&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="background-slideshow">
+  <img src="photo1.jpg" class="bg-slide active">
+  <img src="photo2.jpg" class="bg-slide">
+  <img src="photo3.jpg" class="bg-slide">
+</div>
+
+    <div class="envelope">
+        <div class="envelope-lid"></div>
+        <div class="envelope-lid envelope-lid-secondary"></div>
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="card-cover">
+                    <div class="card-side card-side-primary">
+                        <h1 class="card-title">
+                            <span class="card-title-secondary">Sonsuza Kadar</span>
+                            <span class="card-title-main">Ece ve Halil<span
+                                    class="card-title-apostrophe"></span></span>
+                            <span class="card-title-secondary">Mutlu</span>
+                        </h1>
+                    </div>
+                    <div class="card-side card-side-secondary"></div>
+                </div>
+                <div class="card-body" id="click-text">
+                    <p >Sevgili Ece ve Halil,,</p>
+                    <p>Sizleri böyle güzel bir yolculuğa el ele çıktığınız için yürekten tebrik ediyorum. Birbirinize duyduğunuz sevgiyle, saygıyla ve güvenle kurduğunuz bu yuvanın, hep sıcak, hep huzurlu kalmasını dilerim.Gülüşleriniz hiç eksilmesin, kalbiniz her daim aynı heyecanla atsın.Bu güzel başlangıcınızın sonsuz bir mutluluğa dönüşmesi dileğiyle…
+Tüm kalbimle,
+
+                    </p>
+                    <p>BUCKY</p>
+                </div>
+            </div>
+        </div>
+    </div>
+ <audio id="love-audio" src="sekersiz.mp3"></audio>
+
+</body>
+<script>
+  const slides = document.querySelectorAll(".bg-slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000); // 5 saniyede bir değişir
+</script>
+
+<script>
+  const text = document.getElementById("click-text");
+  const audio = document.getElementById("love-audio");
+
+  text.addEventListener("click", () => {
+    audio.currentTime = 0; // Baştan başlat
+    audio.play();
+  });
+</script>
+</html>
